@@ -1,11 +1,3 @@
->commands
-
-```bash
-uv add --script main.py numba
-
-uv run --script main.py
-```
-
 >birthday.py
 
 <img
