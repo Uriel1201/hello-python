@@ -4,6 +4,7 @@
 
 ```bash
 uv run --script main.py
+
 uv add --script main.py numba
 ```
 
