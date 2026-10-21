@@ -53,7 +53,7 @@ def main() -> None:
         raise ValueError("Invalid arguments")
     s = simulate_birthday(n, trials)
     p = s / trials
-    f = np.cumsum(probabilities[1:n + 2])   
+    f = np.cumsum(p[1:n + 2])   
     k = np.searchsorted(f, 0.5)               
     stop = min(k + 1, len(f))                
     for i in range(1, stop + 1):
