@@ -17,7 +17,7 @@ and plots m random indices choosing each index i with probability proportional t
 
 ~/hello-python> env -u MPLBACKEND uv run introcs/discretedistribution.py 1000000 100 200 50 90 120 300 90
 """
-from utils_myplots import plot_dist
+from .utils_myplots import plot_dist
 import argparse
 import numpy as np
 
