@@ -1,20 +1,18 @@
 # /// script
 # requires-python = ">=3.12"
 # dependencies = [
-#     "matplotlib>=3.11.2",
 #     "numpy>=2.5.4",
-#     "seaborn>=0.13.2",
 # ]
 # ///
 """
 Name: Dante1201 (Carlos Uriel García)
 Id:   1201
 
-Write a program introcs/arrays/discretedistribution.py that takes an integer command-line
+Write a program introcs/discretedistribution.py that takes an integer command-line
 argument m, followed by a sequence of positive integer command-line arguments a1,a2,…,an
 and plots m random indices choosing each index i with probability proportional to ai.
 
-~/hello-python> env -u MPLBACKEND uv run introcs/arrays/discretedistribution.py 50 10 10 12
+~/hello-python> env -u MPLBACKEND uv run introcs/discretedistribution.py 1000000 100 200 50 90 120 300 90
 """
 from utils_myplots import plot_dist
 import argparse
