@@ -55,7 +55,6 @@ def main() -> None:
     f = 0.0
     for i in range(1, n + 2):
         f += s[i] / trials
-        list.append(f)
         print(f"{i}, {s[i]}, {f}")
         if f >= 0.5:
             break
