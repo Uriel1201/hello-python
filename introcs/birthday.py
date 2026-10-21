@@ -21,7 +21,30 @@ Plot an scatterplot that summarizes the results (the number of times that exactl
 enter the room, and the fraction of times that i or fewer people enter the room)
 for each possible value of i from 1 until the fraction reaches (or exceeds) 50%.
 
-~/hello-python> env -u MPLBACKEND uv run introcs/birthday.py 365 100000
+~/hello-python> uv run introcs/birthday.py 365 100000
+1, 0, 0.0
+2, 234, 0.00234
+3, 521, 0.00755
+4, 809, 0.01564
+5, 1099, 0.02663
+6, 1289, 0.03952
+7, 1464, 0.05416
+8, 1849, 0.07264999999999999
+9, 2024, 0.09289
+10, 2257, 0.11546000000000001
+11, 2497, 0.14043
+12, 2589, 0.16632
+13, 2832, 0.19464
+14, 2930, 0.22394
+15, 3005, 0.25399
+16, 3102, 0.28501
+17, 3155, 0.31656
+18, 3202, 0.34858
+19, 3268, 0.38126
+20, 3199, 0.41325
+21, 3274, 0.44599
+22, 3248, 0.47847
+23, 3152, 0.50999
 """
 import argparse
 import numpy as np
