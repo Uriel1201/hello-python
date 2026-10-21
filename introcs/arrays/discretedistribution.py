@@ -16,22 +16,9 @@ and plots m random indices choosing each index i with probability proportional t
 
 ~/hello-python> env -u MPLBACKEND uv run introcs/arrays/discretedistribution.py 50 10 10 12
 """
-
+from utils_myplots import plot_dist
 import argparse
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-def plot_dist(index_array: np.ndarray) -> None:
-    plt.figure(figsize = (9, 7))
-    sns.set_theme(style= 'darkgrid')
-    plt.title(f'Frequencies')
-    plt.ylabel(f'Frequency')
-    plt.xlabel(f'index')
-    sns.countplot(x = index_array, color = '#088F8F')
-    plt.tight_layout()
-    plt.savefig("images/discret_distribution.png", dpi=150, bbox_inches="tight")
-    plt.close()
 
 def main() -> None:
     parser = argparse.ArgumentParser()
