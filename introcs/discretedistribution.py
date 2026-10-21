@@ -2,8 +2,6 @@
 # requires-python = ">=3.12"
 # dependencies = [
 #     "numpy>=2.5.4",
-#     "matplotlib>=3.11.2",
-#     "seaborn>=0.13.2",
 # ]
 # ///
 """
