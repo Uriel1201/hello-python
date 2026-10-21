@@ -1,10 +1,8 @@
 # /// script
 # requires-python = ">=3.12"
 # dependencies = [
-#     "matplotlib>=3.11.2",
 #     "numba>=0.68.0",
 #     "numpy>=2.5.4",
-#     "seaborn>=0.13.2",
 # ]
 # ///
 """
@@ -55,16 +53,12 @@ def main() -> None:
         raise ValueError("Invalid arguments")
     s = simulate_birthday(n, trials)
     f = 0.0
-    list = []
     for i in range(1, n + 2):
         f += s[i] / trials
         list.append(f)
         print(f"{i}, {s[i]}, {f}")
         if f >= 0.5:
             break
-    frequencies = np.array(list)
-    plot_birthday(frequencies)
-
 
 if __name__ == "__main__":
     main()
