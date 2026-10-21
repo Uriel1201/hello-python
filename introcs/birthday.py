@@ -11,7 +11,7 @@
 Name: Dante1201 (Carlos Uriel García)
 Id:   1201
 
-Write a program introcs/arrays/birthday.py that takes two integer command-line arguments n
+Write a program introcs/birthday.py that takes two integer command-line arguments n
 and trials and performs the following experiment, trials times:
 
 - Choose a birthday for the next person, uniformly at random between 0 and n−1.
@@ -23,30 +23,7 @@ Print a table that summarizes the results (the count i, the number of times that
 exactly i people enter the room, and the fraction of times that i or fewer people enter the room)
 for each possible value of i from 1 until the fraction reaches (or exceeds) 50%.
 
-~/hello-python> env -u MPLBACKEND uv run introcs/arrays/birthday.py 365 100000
-1, 0, 0.000000
-2, 2720, 0.002720
-3, 5581, 0.008301
-4, 8146, 0.016447
-5, 10733, 0.027180
-6, 13316, 0.040496
-7, 15884, 0.056380
-8, 18068, 0.074448
-9, 20083, 0.094531
-10, 22346, 0.116877
-11, 24189, 0.141066
-12, 25699, 0.166765
-13, 27474, 0.194239
-14, 28796, 0.223035
-15, 29805, 0.252840
-16, 30440, 0.283280
-17, 31266, 0.314546
-18, 32170, 0.346716
-19, 32278, 0.378994
-20, 32064, 0.411058
-21, 32470, 0.443528
-22, 32019, 0.475547
-23, 31574, 0.507121
+~/hello-python> env -u MPLBACKEND uv run introcs/birthday.py 365 100000
 """
 
 import argparse
