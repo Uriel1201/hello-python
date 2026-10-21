@@ -7,6 +7,7 @@
 #     "ipython",
 # ]
 # ///
+import os
 from IPython.display import Image, display
 import matplotlib.pyplot as plt
 import seaborn as sns
