@@ -12,11 +12,10 @@ Id:   1201
 
 Write a program introcs/discretedistribution.py that takes an integer command-line
 argument m, followed by a sequence of positive integer command-line arguments a1,a2,…,an
-and plots m random indices choosing each index i with probability proportional to ai.
+and prints m random indices choosing each index i with probability proportional to ai.
 
 ~/hello-python> env -u MPLBACKEND uv run introcs/discretedistribution.py 1000000 100 200 50 90 120 300 90
 """
-from utils_myplots import plot_dist
 import argparse
 import numpy as np
 
@@ -33,7 +32,8 @@ def main() -> None:
     s = np.concatenate(([0], np.cumsum(values)))
     p = np.random.randint(0, s[-1], size=m) 
     sample = np.searchsorted(s, p, side="right")
-    plot_dist(sample)
+    for value in sample:
+        print(value)
 
 if __name__ == "__main__":
     main()
