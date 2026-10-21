@@ -52,12 +52,12 @@ def main() -> None:
     if n <= 0 or trials <= 0:
         raise ValueError("Invalid arguments")
     s = simulate_birthday(n, trials)
-    f = 0.0
-    for i in range(1, n + 2):
-        f += s[i] / trials
-        print(f"{i}, {s[i]}, {f}")
-        if f >= 0.5:
-            break
+    p = s / trials
+    f = np.cumsum(probabilities[1:n + 2])   
+    k = np.searchsorted(f, 0.5)               
+    stop = min(k + 1, len(f))                
+    for i in range(1, stop + 1):
+        print(f"{i}, {s[i]}, {f[i - 1]}")
 
 if __name__ == "__main__":
     main()
