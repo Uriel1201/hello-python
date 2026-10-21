@@ -3,13 +3,17 @@
 # dependencies = [
 #     "matplotlib>=3.11.2",
 #     "seaborn>=0.13.2",
+#     "numpy>=2.5.4",
+#     "ipython",
 # ]
 # ///
 from IPython.display import Image, display
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 
 def plot_dist(index_array: np.ndarray) -> None:
+    os.makedirs("images", exist_ok=True)
     plt.figure(figsize = (9, 7))
     sns.set_theme(style= 'darkgrid')
     plt.title(f'Frequencies')
