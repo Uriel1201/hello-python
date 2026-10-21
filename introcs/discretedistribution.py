@@ -14,7 +14,7 @@ Write a program introcs/discretedistribution.py that takes an integer command-li
 argument m, followed by a sequence of positive integer command-line arguments a1,a2,…,an
 and prints m random indices choosing each index i with probability proportional to ai.
 
-~/hello-python> env -u MPLBACKEND uv run introcs/discretedistribution.py 1000000 100 200 50 90 120 300 90
+~/hello-python> uv run introcs/discretedistribution.py 1000000 100 200 50 90 120 300 90
 """
 import argparse
 import numpy as np
