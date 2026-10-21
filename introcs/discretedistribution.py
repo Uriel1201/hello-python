@@ -4,7 +4,6 @@
 #     "numpy>=2.5.4",
 #     "matplotlib>=3.11.2",
 #     "seaborn>=0.13.2",
-#     "ipython",
 # ]
 # ///
 """
