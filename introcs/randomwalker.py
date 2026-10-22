@@ -23,7 +23,7 @@ import argparse
 import numpy as np
 from numba import njit
 
-@njit
+@njit(cache=True)
 def randomwalk(manhattan: int):
     i = j = 0
     steps = [(0, 0)]
