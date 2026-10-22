@@ -38,16 +38,15 @@ import numpy as np
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("args", type=int, nargs="+")
-    params = parser.parse_args().args
-    if len(params) < 2:
-        parser.error("Usage: n, width")
-    n = params.pop(0)
-    w = params.pop(0)
-    if n < 0 or w < 0:
-        parser.error("Error: expected non-negative integers")
-    i, j = np.indices((n, n))
-    bandmatrix = np.abs(i - j) <= w
+    parser.add_argument("n", type=int)
+    parser.add_argument("w", type=int)
+    args = parser.parse_args()
+    if args.n < 0:
+        parser.error("n must be non-negative")
+    if args.w < 0:
+        parser.error("width must be positive")
+    i, j = np.indices((args.n, args.n))
+    bandmatrix = np.abs(i - j) <= args.w
     for row in np.where(bandmatrix, "*", "0"):
         print(" ".join(row))
 
