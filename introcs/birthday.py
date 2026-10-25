@@ -22,7 +22,7 @@
 # enter the room, and the fraction of times that i or fewer people enter the room)
 # for each possible value of i from 1 until the fraction reaches (or exceeds) 50%.
 
-# ~/hello-python$ uv run introcs/birthday.py 365 100000
+# ~/hello-python $ uv run introcs/birthday.py 365 100000
 
 import argparse
 import sys
