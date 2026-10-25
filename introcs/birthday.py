@@ -61,7 +61,7 @@ def main() -> None:
     k = np.arange(1, len(s) + 1)
     batch = pa.record_batch(
         [pa.array(k), pa.array(s), pa.array(f)],
-        names=["k", "count_k", "p_k"],
+        names=["k", "frequency", "p_k"],
     )
     with pa.ipc.new_stream(sys.stdout.buffer, batch.schema) as writer:
         writer.write_batch(batch)
