@@ -32,13 +32,13 @@ import pyarrow as pa
 
 @njit(cache=True)
 def birthday_simulation(n: int, trials: int) -> np.ndarray:
-    s = np.zeros(n + 2, dtype=np.int64)
+    s    = np.zeros(n + 2, dtype=np.int64)
     seen = np.zeros(n, dtype=np.int64)
     for t in range(trials):
-        mark = t + 1
+        mark  = t + 1
         count = 0
         while True:
-            p = np.random.randint(0, n)
+            p     = np.random.randint(0, n)
             count += 1
             if seen[p] == mark:
                 break
@@ -47,18 +47,18 @@ def birthday_simulation(n: int, trials: int) -> np.ndarray:
     return s
 
 def main() -> None:
-    parser = argparse.ArgumentParser()
+    parser    = argparse.ArgumentParser()
     parser.add_argument("n", type=int)
     parser.add_argument("trials", type=int)
-    args = parser.parse_args()
+    args      = parser.parse_args()
     n, trials = args.n, args.trials
     if n <= 0 or trials <= 0:
         raise ValueError("Invalid arguments")
-    s = birthday_simulation(n, trials)
-    f = np.cumsum(s[1:n + 2]) / trials
-    end = np.searchsorted(f, 0.5) + 1
-    s, f = s[:end], f[:end]
-    k = np.arange(1, len(s) + 1)
+    simulation = birthday_simulation(n, trials)
+    f          = np.cumsum(simulation[1:n + 2]) / trials
+    end        = np.searchsorted(f, 0.5) + 1
+    s, f       = simulation[:end], f[:end]
+    k          = np.arange(1, len(s) + 1)
     batch = pa.record_batch(
         [pa.array(k), pa.array(s), pa.array(f)],
         names=["k", "frequency", "p_k"],
