@@ -55,14 +55,13 @@ def main() -> None:
     if n <= 0 or trials <= 0:
         raise ValueError("Invalid arguments")
     s = birthday_simulation(n, trials)
-    f = np.cumsum(s[1:n + 2])
-    p = f / trials
-    end = np.searchsorted(p, 0.5) + 1
-    f, p = f[:end], p[:end]
-    k = np.arange(1, len(f) + 1)
+    f = np.cumsum(s[1:n + 2]) / trials
+    end = np.searchsorted(f, 0.5) + 1
+    s, f = s[:end], f[:end]
+    k = np.arange(1, len(s) + 1)
     batch = pa.record_batch(
-        [pa.array(k), pa.array(f), pa.array(p)],
-        names=["k", "cumsum_k", "p_k"],
+        [pa.array(k), pa.array(s), pa.array(f)],
+        names=["k", "count_k", "p_k"],
     )
     with pa.ipc.new_stream(sys.stdout.buffer, batch.schema) as writer:
         writer.write_batch(batch)
