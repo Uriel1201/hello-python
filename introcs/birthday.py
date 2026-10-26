@@ -47,11 +47,11 @@ def birthday_simulation(n: int, trials: int) -> np.ndarray:
     return s
 
 def main() -> None:
-    parser    = argparse.ArgumentParser()
+    parser     = argparse.ArgumentParser()
     parser.add_argument("n", type=int)
     parser.add_argument("trials", type=int)
-    args      = parser.parse_args()
-    n, trials = args.n, args.trials
+    args       = parser.parse_args()
+    n, trials  = args.n, args.trials
     if n <= 0 or trials <= 0:
         raise ValueError("Invalid arguments")
     simulation = birthday_simulation(n, trials)
