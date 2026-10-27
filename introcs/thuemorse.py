@@ -4,15 +4,14 @@
 #     "numpy>=2.5.4",
 # ]
 # ///
-"""
-Write a program introcs/thuemorse.py that takes 
-// an integer command-line argument n and prints an n-by-n pattern. 
-// and creates an n-by-n pattern by printing a + (plus sign) in row i
-// and column j if bits i and j in the sequence are equal, 
-// and a - (minus sign) if they are different.
+
+# Write a program introcs/thuemorse.py that takes 
+# an integer command-line argument n and prints an n-by-n pattern. 
+# and creates an n-by-n pattern by printing a + (plus sign) in row i
+# and column j if bits i and j in the sequence are equal, 
+# and a - (minus sign) if they are different.
  
-~/hello-python $ uv run --script introcs/thuemorse.py 200
-"""
+# ~/hello-python $ uv run --script introcs/thuemorse.py 200
 
 import argparse
 import numpy as np
