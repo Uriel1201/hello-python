@@ -11,7 +11,7 @@ Write a program introcs/thuemorse.py that takes
 // and column j if bits i and j in the sequence are equal, 
 // and a - (minus sign) if they are different.
  
-~/hello-python> uv run --script introcs/thuemorse.py 200
+~/hello-python $ uv run --script introcs/thuemorse.py 200
 """
 
 import argparse
