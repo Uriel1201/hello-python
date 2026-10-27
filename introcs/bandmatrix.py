@@ -4,34 +4,33 @@
 #     "numpy>=2.5.4",
 # ]
 # ///
-"""
-Name: Dante1201 (Carlos Uriel García)
-Id:   1201
 
-Write a program introcs/bandmatrix.py that takes two integer
-command-line arguments n and width and prints an n-by-n pattern,
-with a zero (0) for each element whose distance from the main diagnonal is
-strictly more than width, and an asterisk (*) for each entry that is not.
-Here, distance means the minimum number of cells you have to move
-(either left, right, up, or down) to reach the main diagonal.
+# Name: Dante1201 (Carlos Uriel García)
+# Id:   1201
 
-~/hello-python $ uv run --script introcs/bandmatrix 15 4
-* * * * * 0 0 0 0 0 0 0 0 0 0
-* * * * * * 0 0 0 0 0 0 0 0 0
-* * * * * * * 0 0 0 0 0 0 0 0
-* * * * * * * * 0 0 0 0 0 0 0
-* * * * * * * * * 0 0 0 0 0 0
-0 * * * * * * * * * 0 0 0 0 0
-0 0 * * * * * * * * * 0 0 0 0
-0 0 0 * * * * * * * * * 0 0 0
-0 0 0 0 * * * * * * * * * 0 0
-0 0 0 0 0 * * * * * * * * * 0
-0 0 0 0 0 0 * * * * * * * * *
-0 0 0 0 0 0 0 * * * * * * * *
-0 0 0 0 0 0 0 0 * * * * * * *
-0 0 0 0 0 0 0 0 0 * * * * * *
-0 0 0 0 0 0 0 0 0 0 * * * * *
-"""
+# Write a program introcs/bandmatrix.py that takes two integer
+# command-line arguments n and width and prints an n-by-n pattern,
+# with a zero (0) for each element whose distance from the main diagnonal is
+# strictly more than width, and an asterisk (*) for each entry that is not.
+# Here, distance means the minimum number of cells you have to move
+# (either left, right, up, or down) to reach the main diagonal.
+
+# ~/hello-python $ uv run --script introcs/bandmatrix 15 4
+# * * * * * 0 0 0 0 0 0 0 0 0 0
+# * * * * * * 0 0 0 0 0 0 0 0 0
+# * * * * * * * 0 0 0 0 0 0 0 0
+# * * * * * * * * 0 0 0 0 0 0 0
+# * * * * * * * * * 0 0 0 0 0 0
+# 0 * * * * * * * * * 0 0 0 0 0
+# 0 0 * * * * * * * * * 0 0 0 0
+# 0 0 0 * * * * * * * * * 0 0 0
+# 0 0 0 0 * * * * * * * * * 0 0
+# 0 0 0 0 0 * * * * * * * * * 0
+# 0 0 0 0 0 0 * * * * * * * * *
+# 0 0 0 0 0 0 0 * * * * * * * *
+# 0 0 0 0 0 0 0 0 * * * * * * *
+# 0 0 0 0 0 0 0 0 0 * * * * * *
+# 0 0 0 0 0 0 0 0 0 0 * * * * *
 
 import argparse
 import numpy as np
