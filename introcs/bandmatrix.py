@@ -15,7 +15,7 @@ strictly more than width, and an asterisk (*) for each entry that is not.
 Here, distance means the minimum number of cells you have to move
 (either left, right, up, or down) to reach the main diagonal.
 
-~/hello-python> uv run --script introcs/bandmatrix 15 4
+~/hello-python $ uv run --script introcs/bandmatrix 15 4
 * * * * * 0 0 0 0 0 0 0 0 0 0
 * * * * * * 0 0 0 0 0 0 0 0 0
 * * * * * * * 0 0 0 0 0 0 0 0
