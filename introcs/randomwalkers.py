@@ -15,7 +15,7 @@
 # until the random walker is at Manhattan distance r from the starting point.
 # Print the average number of steps.
 
-# ~/hello-python $ uv run --script introcs/randomwalkers.py 15 20
+# ~/hello-python $ uv run --script introcs/randomwalkers.py 15 1000000
 
 import sys
 import argparse
