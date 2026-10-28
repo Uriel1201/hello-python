@@ -56,11 +56,9 @@ def main() -> None:
         raise ValueError("Invalid arguments")
     simulation = birthday_simulation(n, trials)
     f          = np.cumsum(simulation[1:n + 2]) / trials
-    end        = np.searchsorted(f, 0.5) + 1
-    s, f       = simulation[:end], f[:end]
-    k          = np.arange(1, len(s) + 1)
+    k          = np.arange(1, len(simulation) + 1)
     batch = pa.record_batch(
-        [pa.array(k), pa.array(s), pa.array(f)],
+        [pa.array(k), pa.array(simulation), pa.array(f)],
         names=["k", "frequency", "p_k"],
     )
     with pa.ipc.new_stream(sys.stdout.buffer, batch.schema) as writer:
