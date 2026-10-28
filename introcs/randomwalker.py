@@ -17,7 +17,7 @@
 # treating the starting point as (0, 0).
 # Also, print the total number of steps taken.
 
-# ~/hello-python> uv run --script introcs/randomwalker.py 5
+# ~/hello-python $ uv run --script introcs/randomwalker.py 5
 
 import argparse
 import numpy as np
