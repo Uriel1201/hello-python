@@ -55,8 +55,8 @@ def main() -> None:
     if n <= 0 or trials <= 0:
         raise ValueError("Invalid arguments")
     simulation = birthday_simulation(n, trials)
-    f          = np.cumsum(simulation[1:n + 2]) / trials
-    k          = np.arange(1, len(simulation) + 1)
+    f          = np.cumsum(simulation[0:n + 2]) / trials
+    k          = np.arange(0, len(simulation) + 1)
     batch = pa.record_batch(
         [pa.array(k), pa.array(simulation), pa.array(f)],
         names=["k", "frequency", "p_k"],
