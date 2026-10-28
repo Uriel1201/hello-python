@@ -55,11 +55,12 @@ def main() -> None:
     if args.trials <= 0:
         parser.error("trials must be positive")
     steps  = randomwalks(args.manhattan, args.trials)
-    means  = np.cumsum(steps) / np.arange(1, args.trials + 1)
+    obs    = np.arange(1, args.trials + 1)
+    means  = np.cumsum(steps) / obs
     
     batch  = pa.record_batch(
-        [pa.array(steps), pa.array(means)],
-        names=["x_i", "(x_1 +...+ x_i)/i"]
+        [pa.array(obs), pa.array(steps), pa.array(means)],
+        names = ["trial", "steps", "running_mean"]
     )
     with pa.ipc.new_stream(sys.stdout.buffer, batch.schema) as writer:
         writer.write_batch(batch)
