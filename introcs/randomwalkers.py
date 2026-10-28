@@ -46,18 +46,18 @@ def randomwalks(manhattan: int,
     return result
 
 def main() -> None:
-    parser     = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser()
     parser.add_argument("manhattan", type=int)
     parser.add_argument("trials", type=int)
-    args       = parser.parse_args()
+    args   = parser.parse_args()
     if args.manhattan < 0:
         parser.error("manhattan must be non-negative")
     if args.trials <= 0:
         parser.error("trials must be positive")
-    steps = randomwalks(args.manhattan, args.trials)
-    means = np.cumsum(steps) / np.arange(1, args.trials + 1)
+    steps  = randomwalks(args.manhattan, args.trials)
+    means  = np.cumsum(steps) / np.arange(1, args.trials + 1)
     
-    batch = pa.record_batch(
+    batch  = pa.record_batch(
         [pa.array(steps), pa.array(means)],
         names=["x_i", "(x_1 +...+ x_i)/i"]
     )
